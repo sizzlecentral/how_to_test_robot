@@ -58,16 +58,20 @@ class TestRobot < MiniTest::Test
 
     # assert
     assert_equal(send_to_station, 4)
-    
+
   end
 
   def test_prioritize_tasks_with_empty_todo_list_returns_negative_one
-    skip
+
     # arrange
+    hal = Robot.new
 
     # act
+    do_stuff = hal.prioritize_tasks
 
     # assert
+    assert_equal(do_stuff, -1)
+    
   end
 
   def test_prioritize_tasks_with_todos_returns_max_todo_value
