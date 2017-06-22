@@ -71,16 +71,21 @@ class TestRobot < MiniTest::Test
 
     # assert
     assert_equal(do_stuff, -1)
-    
+
   end
 
   def test_prioritize_tasks_with_todos_returns_max_todo_value
-    skip
+
     # arrange
+    hal = Robot.new
+    hal.todos = [1]
 
     # act
+    do_stuff = hal.prioritize_tasks
 
     # assert
+    assert_equal(do_stuff, 1)
+
   end
 
   def test_workday_on_day_off_returns_true
